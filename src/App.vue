@@ -15,7 +15,7 @@
     </back-to-top>
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>Built by Joe Dac with Vue.js, Vuex, Bulma, and Airtable.</p>
+        <p><i class="fab fa-vuejs fa-2x"></i>&nbsp;Built by Joe Dac with Vue.js, Vuex, Bulma, and Airtable.</p>
       </div>
     </footer>
   </div>
@@ -71,6 +71,9 @@ footer {
   width: 50px;
   height: 50px !important;
   border-radius: 50% !important;
+}
+.fab {
+  color: #41B883;
 }
 </style>
 

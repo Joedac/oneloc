@@ -15,6 +15,6 @@ git add -A
 git commit -m 'deploy'
 
 # push on gitub pages
-git push -f git@github.com:joedac/1loc.git master:gh-pages
+git push -f git@github.com:joedac/oneloc.git master:gh-pages
 
 cd -

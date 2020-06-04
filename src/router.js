@@ -6,7 +6,7 @@ import Category from "./views/Category.vue"
 Vue.use(Router);
 
 export default new Router({
-  mode: "hash",
+  // mode: "hash",
   base: process.env.BASE_URL,
   routes: [
     {
@@ -26,12 +26,12 @@ export default new Router({
       }
     },
     {
-        path: "/category/:slug",
-        name: "category",
-        component: Category
-      }
-],
-scrollBehavior () {
+      path: "/category/:slug",
+      name: "categorySlug",
+      component: Category
+    }
+  ],
+  scrollBehavior() {
     return { x: 0, y: 0 }
   }
 })

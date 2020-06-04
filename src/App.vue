@@ -1,16 +1,21 @@
 <template>
   <div id="app">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
     <transition name="fade" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
-   <back-to-top bottom="30px" right="30px">
-   <span class="back-to-top tag is-primary"><i class="fa fa-chevron-up"></i></span>
-</back-to-top>
+    <back-to-top bottom="30px" right="30px">
+      <span class="back-to-top tag is-primary">
+        <i class="fa fa-chevron-up"></i>
+      </span>
+    </back-to-top>
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>Built by Joe Dac with Vue.js, Bulma, and Airtable.</p>
+        <p>Built by Joe Dac with Vue.js, Vuex, Bulma, and Airtable.</p>
       </div>
     </footer>
   </div>
@@ -21,23 +26,23 @@ export default {
   name: "App",
   data() {
     return {
-      showNav: false,
+      showNav: false
     };
   },
-    watch: {
-      '$route' (to) {
-        document.title = to.meta.title || 'Joe Dac\'s Portfolio'
-      },
-      immediate:true
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || "Oneloc";
     },
+    immediate: true
+  }
 };
 </script>
 
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
 body {
-font-family: 'Ubuntu', sans-serif !important;
+  font-family: "Ubuntu", sans-serif !important;
 }
 .fade-enter-active,
 .fade-leave-active {

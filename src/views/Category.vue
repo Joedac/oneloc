@@ -1,60 +1,79 @@
 <template>
-<div>
-  <div style="margin-top: 50px" class="column is-one-quarter">
-    <router-link :to="'/'" class="button is-primary is-fullwidth">Retour à la liste</router-link>
+  <div>
+    <div style="margin-top: 50px" class="container is-fluid">
+      <div class="column is-one-quarter">
+        <router-link :to="'/'" class="button is-primary is-fullwidth">Retour à la liste</router-link>
       </div>
-  <div v-if="functions.length > 0">
-    <div class="column" v-bind:key="i" v-for="(func, i) in functions">
-      <p>{{func.name}}</p>
-      <vue-simple-markdown :source="func.function"></vue-simple-markdown>Catégorie :
-      <span class="tag is-primary">{{func.category}}</span>
-       <hr />
+
+      <Search @receivingSelfSearch='autoSearch' v-bind:Search="search"/>
+      
+      <h2 class="title is-2 has-text-weight-medium has-text-centered">Catégorie : {{checkCat}}</h2>
+      <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
+        <div v-if="checkCat === func.category">
+          <p>{{func.name}}</p>
+          <vue-simple-markdown :source="func.function"></vue-simple-markdown>Catégorie :
+          <span class="tag is-primary">{{func.category}}</span>
+          <hr />
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
+<style scoped>
+.title {
+  margin-top: 20px;
+}
+</style>
+
 <script>
-import FunctionsService from "@/services/FunctionsService";
+import { mapGetters } from "vuex";
+import Search from '../components/Search'
 
 export default {
+
+    components: {
+    Search
+  },
   data() {
     return {
-      airtableResp: []
+      /**
+       * Initialize search keyword for filter functions
+       */
+      search: "",
+      checkCat: this.$route.params.slug
     };
   },
   mounted: function() {
-    let self = this;
     /**
-     * get images from airtable
+     * Let's get state of functions by category !
      */
-    async function getFunctionByCategory() {
-      try {
-        const response = await FunctionsService.getFunctionByCategory(
-          self.$route.params.slug
-        );
-        self.airtableResp = response.data.records;
-      } catch (err) {
-        self.err = true;
-      }
-    }
-    getFunctionByCategory();
+    this.$store.dispatch("getFunctionByCategoryStore", this.$route.params.slug);
+  },
+
+  methods: {
+    ...mapGetters(["FUNCTIONS_BY_CATEGORY"]),
+     autoSearch(text){
+       this.search=text
+    },
   },
   computed: {
     /**
-     * Let's build an array of images !
+     * Get functions by category from our store
+     * Add the filter function
      */
-    functions() {
-      let self = this;
-      const functionsList = self.airtableResp.map(item => {
-        let functions = {};
-        functions.name = item.fields.Name;
-        functions.category = item.fields["Category (from Table 4)"][0];
-        functions.function = item.fields.function;
-        return functions;
+    functionsList() {
+      return this.FUNCTIONS_BY_CATEGORY().filter(func => {
+        return func.name.toLowerCase().includes(this.search.toLowerCase());
       });
-      return functionsList;
     }
+    /**
+     * Get category of functions
+     */
+    /*    category() {
+        let category = this.$store ? this.FUNCTIONS_BY_CATEGORY()[0].category : null
+         return category
+    }, */
   }
 };
 </script>

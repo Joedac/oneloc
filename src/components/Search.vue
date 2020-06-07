@@ -1,13 +1,11 @@
 
  <template>
-  <div class="container is-fluid">
-    <div class="columns is-centered">
       <div class="column is-one-quarter">
         <div class="field">
           <div class="control">
             <p class="control has-icons-left">
               <input
-                class="input is-rounded is-primary"
+                class="input is-rounded is-success"
                 type="text"
                 v-model="searchWord"
                 placeholder="Recherche"
@@ -19,8 +17,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
     <script>

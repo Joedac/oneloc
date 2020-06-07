@@ -9,7 +9,7 @@
       <router-view />
     </transition>
     <back-to-top bottom="30px" right="30px">
-      <span class="back-to-top tag is-primary">
+      <span class="back-to-top tag is-success">
         <i class="fa fa-chevron-up"></i>
       </span>
     </back-to-top>
@@ -74,6 +74,21 @@ footer {
 }
 .fab {
   color: #41B883;
+}
+.hljs-keyword {
+  color: #00d1b2;
+}
+pre {
+  background: #282a36 !important;
+}
+.hljs {
+  color: white;
+}
+.hljs-comment {
+  color: #b6bde2 !important;
+}
+.hljs-function {
+  color: rgb(212, 235, 13) !important;
 }
 </style>
 

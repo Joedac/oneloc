@@ -5,7 +5,11 @@ import 'vue-simple-markdown/dist/vue-simple-markdown.css'
 import BackToTop from 'vue-backtotop'
 import router from './router'
 import store from './store/store'
+import './registerServiceWorker'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
 
+Vue.use(Buefy)
 Vue.use(VueSimpleMarkdown)
 Vue.config.productionTip = false
 Vue.use(BackToTop)

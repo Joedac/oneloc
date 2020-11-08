@@ -22,76 +22,12 @@
 </template>
 
 <script>
+
 export default {
-  name: "App",
-  data() {
-    return {
-      showNav: false
-    };
-  },
-  watch: {
-    $route(to) {
-      document.title = to.meta.title || "Oneloc";
-    },
-    immediate: true
-  }
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style type="text/css">
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
-
-body {
-  font-family: "Ubuntu", sans-serif !important;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-#app {
-  min-height: 100vh;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 168px; /* height of your footer */
-}
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-.back-to-top {
-  width: 50px;
-  height: 50px !important;
-  border-radius: 50% !important;
-}
-.fab {
-  color: #41B883;
-}
-.hljs-keyword {
-  color: #00d1b2;
-}
-pre {
-  background: #282a36 !important;
-}
-.hljs {
-  color: white;
-}
-.hljs-comment {
-  color: #b6bde2 !important;
-}
-.hljs-function {
-  color: rgb(212, 235, 13) !important;
-}
-</style>
-
-<style lang="sass">
-@import "~bulma/bulma.sass"
-</style>

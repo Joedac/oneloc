@@ -4,10 +4,10 @@
       <div class="column is-one-quarter">
         <router-link :to="'/'" class="button is-success is-fullwidth">Retour à la liste</router-link>
       </div>
-
-      <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
-
       <h2 class="title is-2 has-text-weight-medium has-text-centered">Catégorie : {{checkCat}}</h2>
+      <div class="center">
+            <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
+      </div>
       <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
         <div v-if="checkCat === func.category">
           <p>{{func.name}}</p>
@@ -65,6 +65,11 @@
 }
 .show {
   color: #00d1b2;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
 

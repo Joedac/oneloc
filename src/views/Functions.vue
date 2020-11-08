@@ -15,8 +15,9 @@
       class="title is-5 has-text-weight-medium has-text-centered"
     >{{total}} fonctions Javascript actuellement</h2>
 
+<div class="center">
     <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
-
+</div>
     <div class="container is-fluid category">
       <div class="column is-6">
         Par catégorie :
@@ -31,7 +32,7 @@
         </router-link>
       </div>
     </div>
-    <div v-if="functionsList.length > 0">
+    <div class="" v-if="functionsList.length > 0">
       <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
         <p>{{func.name}}</p>
         <b-collapse :open="false" position="is-bottom" aria-id="contentIdForA11y1">
@@ -62,6 +63,12 @@
 
 .title {
   margin-bottom: 5px !important;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
 

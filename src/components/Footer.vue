@@ -18,5 +18,7 @@ name: "Footer"
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-bottom: 20px !important;
+  padding-top: 20px !important;
 }
 </style>

@@ -48,6 +48,7 @@
         <hr />
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
@@ -75,9 +76,11 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import Search from "../components/Search";
+import Footer from "@/components/Footer";
 
 export default {
   components: {
+    Footer,
     Search
   },
 

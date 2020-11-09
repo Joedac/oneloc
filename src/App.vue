@@ -13,11 +13,6 @@
         <i class="fa fa-chevron-up"></i>
       </span>
     </back-to-top>
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p><i class="fab fa-vuejs fa-2x"></i>&nbsp;Built by Joe Dac with Vue.js, Vuex, Bulma, and Airtable.</p>
-      </div>
-    </footer>
   </div>
 </template>
 

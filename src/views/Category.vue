@@ -56,6 +56,7 @@
         </div>
       </div>
     </div>
+    <div class="spacer"></div>
     <Footer/>
   </div>
 </template>
@@ -71,6 +72,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.spacer {
+  min-height: 60px;
 }
 </style>
 

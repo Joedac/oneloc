@@ -8,12 +8,13 @@ import store from './store/store'
 import './registerServiceWorker'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import PageLoader from 'bulma-pageloader'
 
 Vue.use(Buefy)
 Vue.use(VueSimpleMarkdown)
 Vue.config.productionTip = false
 Vue.use(BackToTop)
-
+Vue.use(PageLoader)
 new Vue({
   el: '#app',
   router,

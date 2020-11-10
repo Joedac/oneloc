@@ -1,5 +1,5 @@
 <template>
-  <div class="container is-fluid" style="margin-top: 50px" v-if="total > 0">
+  <div class="container is-fluid" style="margin-top: 50px" v-if="functionsList.length > 0">
     <h2 class="title has-text-success is-3 has-text-weight-medium has-text-centered">
       {{ welcome }}
       <i class="fas fa-code"></i>
@@ -48,7 +48,11 @@
         <hr />
       </div>
     </div>
+    <div class="spacer"></div>
     <Footer/>
+  </div>
+  <div v-else>
+    <div class="pageloader is-active"><span class="title">1-loc is loading, please wait...</span></div>
   </div>
 </template>
 
@@ -71,22 +75,26 @@
   align-items: center;
   justify-content: center;
 }
+
+.spacer {
+  min-height: 60px;
+}
 </style>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import Search from "../components/Search";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer"
 
 export default {
   components: {
-    Footer,
-    Search
+    Search,
+    Footer
   },
 
   data() {
     return {
-      welcome: "Bienvenue sur Oneloc",
+      welcome: "Bienvenue sur 1-loc",
       subtitle: "(one line of code)",
       search: ""
     };

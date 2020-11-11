@@ -1,5 +1,5 @@
 <template>
-  <div class="container is-fluid" style="margin-top: 50px" v-if="functionsList.length > 0">
+  <div class="container is-fluid" style="margin-top: 50px" v-if="total > 0">
     <h2 class="title has-text-success is-3 has-text-weight-medium has-text-centered">
       {{ welcome }}
       <i class="fas fa-code"></i>
@@ -11,6 +11,7 @@
       et en une seule ligne de code !
     </p>
     <br />
+    <p class="contribute has-text-centered"><router-link :to="'/formulaire'">Tu veux contribuer ? Envoie nous ta fonction et nous la publierons !</router-link></p>
     <h2
       class="title is-5 has-text-weight-medium has-text-centered"
     >{{total}} fonctions Javascript actuellement</h2>
@@ -60,6 +61,11 @@
 .show {
   color: #00d1b2;
 }
+
+a {
+  color: #00d1b2;
+}
+
 .category {
   margin-right: 5px;
   margin-top: 10px;
@@ -68,6 +74,10 @@
 
 .title {
   margin-bottom: 5px !important;
+}
+
+.contribute {
+  margin-bottom: 10px !important;
 }
 
 .center {
@@ -109,7 +119,7 @@ export default {
 
   methods: {
     ...mapGetters(["FUNCTIONS", "CATEGORIES"]),
-    ...mapActions(["getFunctionsStore", "getCategoriesStore", "postFunction"]),
+    ...mapActions(["getFunctionsStore", "getCategoriesStore"]),
     autoSearch(text) {
       this.search = text;
     }

@@ -7,7 +7,8 @@ export default new Vuex.Store({
     state: {
         functions: [],
         categories: [],
-        functionsBycat: []
+        functionsBycat: [],
+        post: ''
     },
 
     actions: {
@@ -55,10 +56,10 @@ export default new Vuex.Store({
                 console.error(error)
             }
         },
-        async postFunction() {
+        async postFunction({ commit }, payload) {
             try {
-                const response = FunctionsService.postFunctions()
-                console.log(response)
+                const response = FunctionsService.postFunctions(payload)
+                commit('SET_POST', response)
             }
             catch (error) {
                 console.error(error)
@@ -74,6 +75,14 @@ export default new Vuex.Store({
          */
         SET_FUNCTIONS(state, funcs) {
             state.functions = funcs
+        },
+        /**
+         * 
+         * @param {*} state 
+         * @param {*} response 
+         */
+        SET_POST(state, response) {
+            state.post = response
         },
         /**
          * @param {*} state 
@@ -124,6 +133,9 @@ export default new Vuex.Store({
                     return functions;
                 });
         },
+        POST: state => {
+            return state.post
+        }
     },
 
 })

@@ -31,13 +31,13 @@ export default {
     return Axios.get("?filterByFormula={Category}='" + cat + "'")
   },
 
-  postFunctions() {
+  postFunctions(payload) {
     const data = {
       "records": [
         {
           "fields": {
-            "Name": " Vérifiez si tous les éléments du tableau sont égaux à une valeur donnée",
-            "function": "```const isEqual = (arr, value) => arr.every(item => item === value);```",
+            "Name": payload.title,
+            "function": "```" + payload.func + "```",
             "validate": false
           }
         }
@@ -46,7 +46,6 @@ export default {
     
     let url = "https://api.airtable.com/v0/"+ process.env.VUE_APP_TABLEKEY +"/Table%203"
     let axiosConfig = { headers: { Authorization: "Bearer " + process.env.VUE_APP_AIRTABLEKEY , 'Content-Type': 'application/json' } }
-    console.log(url)
     axios
       .post(
         url,

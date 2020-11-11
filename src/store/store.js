@@ -55,6 +55,15 @@ export default new Vuex.Store({
                 console.error(error)
             }
         },
+        async postFunction() {
+            try {
+                const response = FunctionsService.postFunctions()
+                console.log(response)
+            }
+            catch (error) {
+                console.error(error)
+            }
+        },
     },
     mutations: {
 

@@ -109,7 +109,7 @@ export default {
 
   methods: {
     ...mapGetters(["FUNCTIONS", "CATEGORIES"]),
-    ...mapActions(["getFunctionsStore", "getCategoriesStore"]),
+    ...mapActions(["getFunctionsStore", "getCategoriesStore", "postFunction"]),
     autoSearch(text) {
       this.search = text;
     }

@@ -52,8 +52,8 @@ export default {
         data,
         axiosConfig
       )
-      .then(resp => console.log(resp))
+      .then(resp => {return resp})
       .catch(error => console.log(error))
-}
-
+},
+ 
 }

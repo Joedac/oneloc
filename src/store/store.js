@@ -58,8 +58,8 @@ export default new Vuex.Store({
         },
         async postFunction({ commit }, payload) {
             try {
-                const response = FunctionsService.postFunctions(payload)
-                commit('SET_POST', response)
+                FunctionsService.postFunctions(payload)
+                commit('SET_POST', 'post_success')
             }
             catch (error) {
                 console.error(error)

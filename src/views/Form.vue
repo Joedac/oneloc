@@ -2,7 +2,7 @@
   <div>
     <div style="margin-top: 50px" class="container is-fluid">
       <div class="column is-one-quarter">
-        <router-link :to="'/'" class="button is-success is-fullwidth"
+        <router-link :to="'/'" class="button is-success is-outlined is-rounded is-fullwidth"
           >Retour à la liste</router-link
         >
       </div>
@@ -35,7 +35,7 @@
 
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-success" @click.prevent="submitFunction">
+              <button class="button is-outlined is-rounded is-success" @click.prevent="submitFunction">
                 Go !
               </button>
             </div>
@@ -88,8 +88,7 @@ export default {
       success: null,
     };
   },
-  mounted: function () {
-  },
+  mounted: function () {},
 
   methods: {
     ...mapActions(["postFunction"]),
@@ -107,8 +106,8 @@ export default {
       }
     },
     closeError() {
-        this.error = ''
-    }
+      this.error = "";
+    },
   },
   computed: {},
 };

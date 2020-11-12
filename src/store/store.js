@@ -104,7 +104,7 @@ export default new Vuex.Store({
          * Get our states from the store
          * & build our objects from Axios response
          */
-        
+
         FUNCTIONS: state => {
             if (state.functions)
                 return state.functions.map(item => {

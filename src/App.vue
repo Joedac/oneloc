@@ -9,15 +9,21 @@
       <router-view />
     </transition>
     <back-to-top bottom="30px" right="30px">
-      <span class="back-to-top tag is-success">
+      <span class="back-to-top is-rounded tag is-success">
         <i class="fa fa-chevron-up"></i>
       </span>
     </back-to-top>
   </div>
 </template>
 
-<script>
+<style scoped>
+.back-to-top {
+  width: 40px;
+  height: 40px;
+}
+</style>
 
+<script>
 export default {
   name: 'App',
 

@@ -1,11 +1,7 @@
 <template>
   <div>
     <div style="margin-top: 50px" class="container is-fluid">
-      <div class="column is-one-quarter">
-        <router-link :to="'/'" class="button is-success is-outlined is-rounded is-fullwidth"
-          >Retour à la liste</router-link
-        >
-      </div>
+      <GoBackButton />
       <div class="center">
         <div class="column is-8">
           <div class="field">
@@ -75,10 +71,12 @@
 <script>
 import { mapActions } from "vuex";
 import Footer from "@/components/Footer";
+import GoBackButton from "../components/GoBackButton";
 
 export default {
   components: {
     Footer,
+    GoBackButton
   },
   data() {
     return {

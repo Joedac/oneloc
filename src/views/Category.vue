@@ -1,11 +1,7 @@
 <template>
   <div>
     <div style="margin-top: 50px" class="container is-fluid">
-      <div class="column is-one-quarter">
-        <router-link :to="'/'" class="button is-success is-outlined is-rounded is-fullwidth"
-          >Retour à la liste</router-link
-        >
-      </div>
+      <GoBackButton />
       <h2 class="title is-2 has-text-weight-medium has-text-centered">
         Catégorie : {{ checkCat }}
       </h2>
@@ -45,12 +41,14 @@ import { mapGetters, mapActions } from "vuex";
 import Search from "../components/Search";
 import Footer from "@/components/Footer";
 import FunctionslistByCategory from "../components/FunctionsListByCategory";
+import GoBackButton from "../components/GoBackButton";
 
 export default {
   components: {
     Footer,
     Search,
     FunctionslistByCategory,
+    GoBackButton
   },
   data() {
     return {

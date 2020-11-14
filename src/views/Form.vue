@@ -4,34 +4,26 @@
       <GoBackButton />
       <div class="center">
         <div class="column is-8">
-          <div class="field">
-            <label class="label">Titre de ta fonction</label>
-            <div class="control">
-              <input
-                v-model="title"
-                class="input"
-                type="text"
-                placeholder="retourner null"
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label"
-              >Ta fonction, n'hésite pas à la commenter !</label
-            >
-            <div class="control">
-              <textarea
-                v-model="func"
-                class="textarea"
-                placeholder="return null"
-              ></textarea>
-            </div>
-          </div>
-
+          <InputText
+            id="title"
+            placeholder="retourner null"
+            label="Titre de ta fonction"
+            @receivingText="setTitle"
+            v-model="title"
+          />
+          <InputTextArea
+            id="function"
+            placeholder="return null"
+            label="Ta fonction, n'hésite pas à la commenter !"
+            @receivingTextArea="setFunction"
+            v-model="func"
+          />
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-outlined is-rounded is-success" @click.prevent="submitFunction">
+              <button
+                class="button is-outlined is-rounded is-success"
+                @click.prevent="submitFunction"
+              >
                 Go !
               </button>
             </div>
@@ -72,11 +64,15 @@
 import { mapActions } from "vuex";
 import Footer from "@/components/Footer";
 import GoBackButton from "../components/GoBackButton";
+import InputText from "../components/InputText";
+import InputTextArea from "../components/InputTextArea";
 
 export default {
   components: {
     Footer,
-    GoBackButton
+    GoBackButton,
+    InputText,
+    InputTextArea,
   },
   data() {
     return {
@@ -90,6 +86,14 @@ export default {
 
   methods: {
     ...mapActions(["postFunction"]),
+
+    setTitle(text) {
+      this.title = text;
+    },
+    setFunction(text) {
+      this.func = text;
+    },
+
     submitFunction() {
       if (this.title && this.func) {
         let payload = {
@@ -97,7 +101,9 @@ export default {
           func: this.func,
         };
         this.postFunction(payload);
-        (this.title = ""), (this.func = ""), (this.success = "success");
+        (document.getElementById("title").value = ""),
+          (document.getElementById("function").value = ""),
+          (this.success = "success");
         this.error = "";
       } else {
         this.error = "error";

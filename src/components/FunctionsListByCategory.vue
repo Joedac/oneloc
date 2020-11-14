@@ -68,6 +68,10 @@
 
 <script>
 export default {
-  props: ["functionsList", "checkCat", "media"],
+  props: {
+    functionsList: Array,
+    checkCat: String,
+    media: Number,
+  },
 };
 </script>

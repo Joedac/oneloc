@@ -40,6 +40,9 @@
 
 <script>
 export default {
-  props: ["functionsList", "checkCat"],
+  props: {
+    functionsList: Array,
+    checkCat: String,
+  },
 };
 </script>

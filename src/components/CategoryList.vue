@@ -25,6 +25,9 @@
 
 <script>
 export default {
-  props: ["categoriesList", "cat"],
+  props: {
+    categoriesList: Array,
+    cat: String
+  },
 };
 </script>

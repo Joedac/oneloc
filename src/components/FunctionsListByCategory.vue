@@ -2,7 +2,7 @@
   <div>
     <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
       <div v-if="checkCat === func.category">
-        <p>{{ func.name }} <i class="fas fa-user-edit"></i> <span class="tag is-rounded is-warning">{{ func.author }}</span></p>
+        <p>{{ func.name }} <br> <i class="fas fa-user-edit"></i> <span class="tag is-rounded is-warning">{{ func.author }}</span></p>
         <b-collapse
           :open="false"
           position="is-bottom"

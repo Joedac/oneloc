@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9865365a-773f-4ebd-b109-22dac8b9a4e1/deploy-status)](https://app.netlify.com/sites/web-1loc/deploys)
 # 1loc
 
 ## Project setup

@@ -17,8 +17,15 @@
             <b-icon :icon="!props.open ? 'menu-down' : 'menu-up'"></b-icon>
             {{ !props.open ? "Show me the code !" : "Hide" }}
           </a>
-          <vue-simple-markdown :source="func.function"></vue-simple-markdown
-          >Catégorie :
+          <vue-simple-markdown :id="i" :source="func.function"></vue-simple-markdown
+          >
+           <button
+          class="button is-small is-outlined is-rounded is-info"
+          @click.prevent="copy(i)"
+        >
+        {{ copyText === false ? 'copy' : 'copied !'}}
+        </button>
+          Catégorie :
           <span class="tag is-rounded is-success">{{ func.category }}</span>
         </b-collapse>
         <hr />
@@ -72,6 +79,33 @@ export default {
     functionsList: Array,
     checkCat: String,
     media: Number,
+  },
+
+  data() {
+    return {
+     copyText: false
+    };
+  },
+
+   methods: {
+    copy(i) {
+      let copiedText = document.getElementById(i).innerText;
+      navigator.permissions
+        .query({ name: "clipboard-write" })
+        .then((result) => {
+          if (result.state == "granted" || result.state == "prompt") {
+            navigator.clipboard.writeText(copiedText).then(
+              function () {
+                /* clipboard successfully set */
+              },
+              function () {
+                /* clipboard write failed */
+              }
+            );
+          }
+        });
+        this.copyText = true
+    },
   },
 };
 </script>

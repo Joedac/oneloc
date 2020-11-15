@@ -32,10 +32,12 @@ export default {
   },
 
   postFunctions(payload) {
+    payload.author = payload.author ? payload.author : null
     const data = {
       "records": [
         {
           "fields": {
+            "Author": payload.author,
             "Name": payload.title,
             "function": "```" + payload.func + "```",
             "validate": false
@@ -43,7 +45,6 @@ export default {
         }
       ]
     }
-    
     let url = "https://api.airtable.com/v0/"+ process.env.VUE_APP_TABLEKEY +"/Table%203"
     let axiosConfig = { headers: { Authorization: "Bearer " + process.env.VUE_APP_AIRTABLEKEY , 'Content-Type': 'application/json' } }
     axios

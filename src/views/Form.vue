@@ -5,6 +5,14 @@
       <div class="center">
         <div class="column is-8">
           <InputText
+            id="pseudo"
+            placeholder="@Dac Joe"
+            label="Ton pseudo"
+            @receivingText="setAuthor"
+            v-model="author"
+          />
+          <InputText
+            :error="error"
             id="title"
             placeholder="retourner null"
             label="Titre de ta fonction"
@@ -12,6 +20,7 @@
             v-model="title"
           />
           <InputTextArea
+            :error="error"
             id="function"
             placeholder="return null"
             label="Ta fonction, n'hésite pas à la commenter !"
@@ -30,7 +39,7 @@
           </div>
           <div v-if="error" class="notification is-danger">
             <button @click="closeError" class="delete"></button>
-            Tous les champs sont obligatoires.
+            Les champs titre et fonction sont obligatoires.
           </div>
           <div v-if="success" class="notification is-success">
             Merci pour ta contribution, elle sera bientôt publiée.
@@ -76,6 +85,7 @@ export default {
   },
   data() {
     return {
+      author: null,
       title: null,
       func: null,
       error: null,
@@ -87,6 +97,10 @@ export default {
   methods: {
     ...mapActions(["postFunction"]),
 
+    setAuthor(text) {
+      this.author = text;
+    },
+
     setTitle(text) {
       this.title = text;
     },
@@ -97,12 +111,17 @@ export default {
     submitFunction() {
       if (this.title && this.func) {
         let payload = {
+          author: this.author,
           title: this.title,
           func: this.func,
         };
         this.postFunction(payload);
-        (document.getElementById("title").value = ""),
+        (document.getElementById("pseudo").value = ""),
+          (document.getElementById("title").value = ""),
           (document.getElementById("function").value = ""),
+          this.author = null,
+          this.title = null,
+          this.func =null,
           (this.success = "success");
         this.error = "";
       } else {

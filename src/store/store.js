@@ -112,6 +112,7 @@ export default new Vuex.Store({
                     functions.name = item.fields.Name;
                     functions.category = item.fields["Category (from Table 4)"][0];
                     functions.function = item.fields.function;
+                    functions.author = item.fields.Author;
                     return functions;
                 });
         },
@@ -130,6 +131,7 @@ export default new Vuex.Store({
                     functions.name = item.fields.Name;
                     functions.category = item.fields["Category (from Table 4)"][0];
                     functions.function = item.fields.function;
+                    functions.author = item.fields.Author;
                     return functions;
                 });
         },

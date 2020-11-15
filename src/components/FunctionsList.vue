@@ -1,7 +1,7 @@
 <template>
   <div class="" v-if="functionsList.length > 0">
     <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
-      <p>{{ func.name }}</p>
+      <p>{{ func.name }} <i class="fas fa-user-edit"></i> <span class="tag is-rounded is-warning">{{ func.author }}</span></p>
       <b-collapse
         :open="false"
         position="is-bottom"

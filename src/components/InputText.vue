@@ -19,7 +19,7 @@ export default {
     text: String,
     label: String,
     placeholder: String,
-    id:String
+    id:String,
   },
 
   computed: {

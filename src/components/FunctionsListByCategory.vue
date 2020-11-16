@@ -2,7 +2,7 @@
   <div>
     <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
       <div v-if="checkCat === func.category">
-        <p>{{ func.name }} <br> <i class="fas fa-user-edit"></i> <span class="tag is-rounded is-warning">{{ func.author }}</span></p>
+        <p>{{ func.name }} <br> <i class="fas fa-user-edit"></i>&nbsp;<span class="tag is-rounded is-warning">{{ func.author }}</span></p>
         <b-collapse
           :open="false"
           position="is-bottom"
@@ -19,12 +19,7 @@
           </a>
           <vue-simple-markdown :id="i" :source="func.function"></vue-simple-markdown
           >
-           <button
-          class="button is-small is-outlined is-rounded is-info"
-          @click.prevent="copy(i)"
-        >
-        {{ copyText === false ? 'copy' : 'copied !'}}
-        </button>
+          <CopyButton :id="'button_'+i" @copyPush="copy(i)" />
           Catégorie :
           <span class="tag is-rounded is-success">{{ func.category }}</span>
         </b-collapse>
@@ -74,19 +69,17 @@
 </style>
 
 <script>
+import CopyButton from "@/components/CopyButton";
+
 export default {
+  components:{
+    CopyButton
+  },
   props: {
     functionsList: Array,
     checkCat: String,
     media: Number,
   },
-
-  data() {
-    return {
-     copyText: false
-    };
-  },
-
    methods: {
     copy(i) {
       let copiedText = document.getElementById(i).innerText;
@@ -104,7 +97,7 @@ export default {
             );
           }
         });
-        this.copyText = true
+      document.getElementById('button_'+i).innerText = 'copied !';
     },
   },
 };

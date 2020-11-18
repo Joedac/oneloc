@@ -11,13 +11,13 @@
     <p class="has-text-centered">
       Oneloc c'est toutes ces fonctions que l'on utilise régulièrement et qu'on
       ne retient jamais. Plus la peine de chercher, Oneloc est là et en une
-      seule ligne de code !
+      seule ligne de code ! 🚀
     </p>
     <br />
     <p class="contribute has-text-centered">
       <router-link :to="'/formulaire'"
         >Tu veux contribuer ? Envoie nous ta fonction et nous la publierons
-        !</router-link
+        ! 📮</router-link
       >
     </p>
     <h2 class="title is-5 has-text-weight-medium has-text-centered">
@@ -27,10 +27,12 @@
     <div class="center">
       <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
     </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
     <CategoryList :categoriesList="categoriesList" />
-
     <FunctionsList :functionsList="functionsList" />
-
+      </div>
+    </div>
     <div class="spacer"></div>
     <Footer />
   </div>

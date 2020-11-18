@@ -1,26 +1,28 @@
 <template>
-  <button
-      class="button is-small is-outlined is-rounded is-info"
+  <span
+      class="tag is-outlined is-rounded is-info"
       @click="pushButton"
   >
-    {{ copyText === false ? 'copy' : 'copied !'}}
-  </button>
+    {{ copyText === false ? 'copy' : 'copied !' }}
+  </span>
 </template>
 
 <script>
 export default {
-name: "CopyButton",
+  name: "CopyButton",
   props: {
     copyText: Boolean
   },
   methods: {
-      pushButton() {
-        this.$emit("copyPush");
-      },
+    pushButton() {
+      this.$emit("copyPush");
+    },
   },
 }
 </script>
 
 <style scoped>
-
+.tag {
+  cursor: pointer;
+}
 </style>

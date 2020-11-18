@@ -1,21 +1,25 @@
 <template>
   <div>
-    <div style="margin-top: 50px" class="container is-fluid">
-      <GoBackButton />
+    <div class="container is-fluid" style="margin-top: 50px">
+      <GoBackButton/>
       <h2 class="title is-2 has-text-weight-medium has-text-centered">
         Catégorie : {{ checkCat }}
       </h2>
       <div class="center">
-        <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
+        <Search v-bind:Search="search" @receivingSelfSearch="autoSearch"/>
       </div>
-      <FunctionslistByCategory
-        :media="media"
-        :functionsList="functionsList"
-        :checkCat="checkCat"
-      />
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <FunctionslistByCategory
+              :checkCat="checkCat"
+              :functionsList="functionsList"
+              :media="media"
+          />
+        </div>
+      </div>
     </div>
     <div class="spacer"></div>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 
@@ -23,6 +27,7 @@
 .title {
   margin-top: 20px;
 }
+
 .show {
   color: #00d1b2;
 }
@@ -37,7 +42,7 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import {mapGetters, mapActions} from "vuex";
 import Search from "../components/Search";
 import Footer from "@/components/Footer";
 import FunctionslistByCategory from "../components/FunctionsListByCategory";

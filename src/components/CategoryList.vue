@@ -1,17 +1,15 @@
 <template>
-  <div class="container is-fluid category">
-    <div class="column is-6">
-      Par catégorie :
-      <br />
-      <router-link
-        class="category"
-        :to="'/category/' + cat.name"
-        v-bind:key="index + 10"
+  <div class="column category">
+    Par catégorie :
+    <br/>
+    <router-link
         v-for="(cat, index) in categoriesList"
-      >
-        <span class="tag is-rounded is-success">{{ cat.name }}</span>
-      </router-link>
-    </div>
+        v-bind:key="index + 10"
+        :to="'/category/' + cat.name"
+        class="category"
+    >
+      <span class="tag is-rounded is-success">{{ cat.name }}</span>
+    </router-link>
   </div>
 </template>
 

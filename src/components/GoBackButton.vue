@@ -1,7 +1,7 @@
 <template>
-  <div class="column is-one-quarter">
-    <router-link :to="'/'" class="button is-success is-outlined is-rounded is-fullwidth"
-    >Retour à la liste</router-link
+  <div class="column">
+    <router-link :to="'/'"
+    ><i class="fas fa-arrow-circle-left fa-2x"></i></router-link
     >
   </div>
 </template>

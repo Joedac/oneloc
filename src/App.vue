@@ -21,6 +21,7 @@
   width: 40px;
   height: 40px;
 }
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 </style>
 
 <script>

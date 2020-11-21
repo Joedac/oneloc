@@ -27,7 +27,7 @@
     <div class="center">
       <Search @receivingSelfSearch="autoSearch" v-bind:Search="search" />
     </div>
-    <div class="columns is-centered">
+    <div class="center">
       <div class="column is-8">
     <CategoryList :categoriesList="categoriesList" />
     <FunctionsList :functionsList="functionsList" />

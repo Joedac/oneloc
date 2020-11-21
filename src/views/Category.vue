@@ -8,7 +8,7 @@
       <div class="center">
         <Search v-bind:Search="search" @receivingSelfSearch="autoSearch"/>
       </div>
-      <div class="columns is-centered">
+      <div class="center">
         <div class="column is-8">
           <FunctionslistByCategory
               :checkCat="checkCat"

@@ -13,5 +13,7 @@ name: "GoBackButton"
 </script>
 
 <style scoped>
-
+.fa-arrow-circle-left {
+  color: #00d1b2 !important;
+}
 </style>

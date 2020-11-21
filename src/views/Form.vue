@@ -6,7 +6,7 @@
         <div class="column is-8">
           <InputText
             id="pseudo"
-            placeholder="@Dac Joe"
+            placeholder="@DacJoe"
             label="Ton pseudo"
             @receivingText="setAuthor"
             v-model="author"

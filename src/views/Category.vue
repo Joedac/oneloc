@@ -8,15 +8,11 @@
       <div class="center">
         <Search v-bind:Search="search" @receivingSelfSearch="autoSearch"/>
       </div>
-      <div class="center">
-        <div class="column is-8">
           <FunctionslistByCategory
               :checkCat="checkCat"
               :functionsList="functionsList"
               :media="media"
           />
-        </div>
-      </div>
     </div>
     <div class="spacer"></div>
     <Footer/>

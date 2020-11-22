@@ -30,7 +30,7 @@
           <div class="field is-grouped">
             <div class="control">
               <button
-                class="button is-outlined is-rounded is-success"
+                class="button is-rounded submit-button"
                 @click.prevent="submitFunction"
               >
                 Go !
@@ -66,6 +66,10 @@
 }
 .spacer {
   min-height: 60px;
+}
+.submit-button {
+  background-color: #616161 !important;
+  color: white;
 }
 </style>
 
@@ -119,9 +123,9 @@ export default {
         (document.getElementById("pseudo").value = ""),
           (document.getElementById("title").value = ""),
           (document.getElementById("function").value = ""),
-          this.author = null,
-          this.title = null,
-          this.func =null,
+          (this.author = null),
+          (this.title = null),
+          (this.func = null),
           (this.success = "success");
         this.error = "";
       } else {

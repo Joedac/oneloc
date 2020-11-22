@@ -1,6 +1,6 @@
 <template>
   <span
-      class="tag is-outlined is-rounded is-info"
+      class="tag is-outlined is-rounded tag-copy"
       @click="pushButton"
   >
     {{ copyText === false ? 'copy' : 'copied !' }}
@@ -24,5 +24,9 @@ export default {
 <style scoped>
 .tag {
   cursor: pointer;
+}
+.tag-copy {
+  background-color: #cfd8dc !important;
+  color: white;
 }
 </style>

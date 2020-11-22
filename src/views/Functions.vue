@@ -1,12 +1,12 @@
 <template>
   <div class="container is-fluid" style="margin-top: 50px" v-if="total > 0">
     <h2
-      class="title has-text-success is-3 has-text-weight-medium has-text-centered"
+      class="title  is-3 has-text-weight-medium has-text-centered"
     >
       {{ welcome }}
       <i class="fas fa-code"></i>
     </h2>
-    <h3 class="has-text-centered has-text-success">{{ subtitle }}</h3>
+    <h3 class="has-text-centered ">{{ subtitle }}</h3>
     <br />
     <p class="has-text-centered">
       Oneloc c'est toutes ces fonctions que l'on utilise régulièrement et qu'on
@@ -41,7 +41,7 @@
 
 <style scoped>
 a {
-  color: #00d1b2;
+  color: #8e8e8e;
 }
 
 .title {

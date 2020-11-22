@@ -2,7 +2,7 @@
   <div>
     <div class="column" v-bind:key="i" v-for="(func, i) in functionsList">
       <div v-if="checkCat === func.category">
-        <p>{{ func.name }} <br> <i class="fas fa-user-edit"></i>&nbsp;<span class="tag is-rounded is-warning">{{ func.author }}</span></p>
+        <p>{{ func.name }} <br> <i class="fas fa-user-edit"></i>&nbsp;<span class="tag is-rounded tag-author">{{ func.author }}</span></p>
         <b-collapse
           :open="false"
           position="is-bottom"
@@ -21,7 +21,7 @@
           >
           <CopyButton :id="'button_'+i" @copyPush="copy(i)" />
           Catégorie :
-          <span class="tag is-rounded is-success">{{ func.category }}</span>
+          <span class="tag is-rounded tag-category">{{ func.category }}</span>
         </b-collapse>
         <hr />
       </div>
@@ -64,7 +64,19 @@
 
 <style scoped>
 .show {
-  color: #00d1b2;
+  color: #8e8e8e;
+}
+.tag-author {
+  background-color: #8e8e8e !important;
+  color: white;
+}
+.tag-category {
+  background-color: #616161 !important;
+  color: white;
+}
+.tag-copy {
+  background-color: #cfd8dc !important;
+  color: white;
 }
 </style>
 

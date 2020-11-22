@@ -8,7 +8,7 @@
         :to="'/category/' + cat.name"
         class="category"
     >
-      <span class="tag is-rounded is-success">{{ cat.name }}</span>
+      <span class="tag tag-category is-rounded">{{ cat.name }}</span>
     </router-link>
   </div>
 </template>
@@ -18,6 +18,10 @@
   margin-right: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.tag-category {
+  background-color: #616161 !important;
+  color: white;
 }
 </style>
 

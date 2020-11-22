@@ -5,7 +5,7 @@
       <div class="control">
         <p class="control has-icons-left">
           <input
-            class="input is-rounded is-success"
+            class="input is-rounded"
             type="text"
             v-model="searchWord"
             placeholder="Recherche"
@@ -19,6 +19,13 @@
   </div>
 </template>
 
+<style scoped>
+input:focus {
+  border-color: #616161 !important;
+  box-shadow: 0 0 5px #616161;
+  outline: none !important;
+}
+</style>
     <script>
 export default {
   props: {

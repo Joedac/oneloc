@@ -14,6 +14,6 @@ name: "GoBackButton"
 
 <style scoped>
 .fa-arrow-circle-left {
-  color: #00d1b2 !important;
+  color: #616161 !important;
 }
 </style>

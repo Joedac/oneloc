@@ -9,7 +9,7 @@
       <router-view />
     </transition>
     <back-to-top bottom="30px" right="30px">
-      <span class="back-to-top is-rounded tag is-success">
+      <span class="back-to-top is-rounded tag">
         <i class="fa fa-chevron-up"></i>
       </span>
     </back-to-top>
@@ -20,6 +20,7 @@
 .back-to-top {
   width: 40px;
   height: 40px;
+  background-color: #102027 !important;
 }
 * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 </style>
